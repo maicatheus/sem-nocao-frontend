@@ -30,7 +30,13 @@ export default function GameScreen() {
   }, [players, startIndex]);
 
   const semIndexInOrder = useMemo(() => {
-    if (!players || players.length === 0 || semIndex == null || startIndex == null) return null;
+    if (
+      !players ||
+      players.length === 0 ||
+      semIndex == null ||
+      startIndex == null
+    )
+      return null;
     const semPlayerId = players[semIndex]?.id;
     if (!semPlayerId) return null;
     return playersInOrder.findIndex((p) => p.id === semPlayerId);
@@ -53,17 +59,22 @@ export default function GameScreen() {
       return;
     }
     if (!players || players.length < 3) {
-      alert("É necessário pelo menos 3 jogadores. Volte e adicione mais jogadores.");
+      alert(
+        "É necessário pelo menos 3 jogadores. Volte e adicione mais jogadores."
+      );
       navigate("/");
       return;
     }
-
     let mounted = true;
     (async () => {
       setLoading(true);
       setError(null);
       try {
-        const arr = await loadTxtWords(`/words/${category}.csv`);
+        const arr =
+          category === "jogadores"
+            ? players.map((p) => p.name)
+            : await loadTxtWords(`/words/${category}.txt`);
+
         if (!mounted) return;
         const filtered = arr.filter(Boolean);
         if (filtered.length === 0) throw new Error("Categoria sem palavras.");
@@ -113,25 +124,55 @@ export default function GameScreen() {
   }
 
   if (loading) return <div style={{ padding: 18 }}>Carregando palavras...</div>;
-  if (error) return <div style={{ padding: 18, color: "red" }}>Erro: {error}</div>;
+  if (error)
+    return <div style={{ padding: 18, color: "red" }}>Erro: {error}</div>;
   if (!ready) return <div style={{ padding: 18 }}>Carregando jogadores...</div>;
-  if (!currentPlayer) return <div style={{ padding: 18 }}>Inicializando...</div>;
+  if (!currentPlayer)
+    return <div style={{ padding: 18 }}>Inicializando...</div>;
 
   return (
-    <div style={{ padding: 18, fontFamily: "Arial, sans-serif", maxWidth: 720, margin: "0 auto" }}>
+    <div
+      style={{
+        padding: 18,
+        fontFamily: "Arial, sans-serif",
+        maxWidth: 720,
+        margin: "0 auto",
+      }}
+    >
       <h1 style={{ marginBottom: 6 }}>Rodada — Categoria: {category}</h1>
-      <p style={{ marginTop: 0, color: "#555" }}>Mostre o aparelho para o jogador atual e peça para ele clicar em revelar.</p>
+      <p style={{ marginTop: 0, color: "#555" }}>
+        Mostre o aparelho para o jogador atual e peça para ele clicar em
+        revelar.
+      </p>
 
-      <div style={{ marginTop: 18, padding: 16, borderRadius: 10, border: "1px solid #eee", background: "#fff" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div
+        style={{
+          marginTop: 18,
+          padding: 16,
+          borderRadius: 10,
+          border: "1px solid #eee",
+          background: "#fff",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <div>
             <div style={{ color: "#777", fontSize: 14 }}>Jogador atual</div>
-            <div style={{ fontSize: 22, fontWeight: 600 }}>{currentPlayer.name}</div>
+            <div style={{ fontSize: 22, fontWeight: 600 }}>
+              {currentPlayer.name}
+            </div>
           </div>
 
           <div style={{ textAlign: "right" }}>
             <div style={{ color: "#777", fontSize: 14 }}>Turno</div>
-            <div style={{ fontSize: 20 }}>{turnIndex + 1} / {playersInOrder.length}</div>
+            <div style={{ fontSize: 20 }}>
+              {turnIndex + 1} / {playersInOrder.length}
+            </div>
           </div>
         </div>
 
@@ -147,18 +188,36 @@ export default function GameScreen() {
                 background: "#2f80ed",
                 color: "#fff",
                 cursor: "pointer",
-                width: "100%"
+                width: "100%",
               }}
             >
               Revelar palavra
             </button>
           ) : (
             <div>
-              <div style={{ padding: 16, borderRadius: 8, background: "#f9fafb", border: "1px solid #eee", marginBottom: 12, minHeight: 56, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div
+                style={{
+                  padding: 16,
+                  borderRadius: 8,
+                  background: "#f9fafb",
+                  border: "1px solid #eee",
+                  marginBottom: 12,
+                  minHeight: 56,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 {turnIndex === semIndexInOrder ? (
-                  <div style={{ fontSize: 18, color: "#e05555", fontWeight: 700 }}>Você é o Sem Noção</div>
+                  <div
+                    style={{ fontSize: 18, color: "#e05555", fontWeight: 700 }}
+                  >
+                    Você é o Sem Noção
+                  </div>
                 ) : (
-                  <div style={{ fontSize: 20, fontWeight: 700 }}>{roundWord}</div>
+                  <div style={{ fontSize: 20, fontWeight: 700 }}>
+                    {roundWord}
+                  </div>
                 )}
               </div>
 
@@ -172,7 +231,7 @@ export default function GameScreen() {
                   background: "#27ae60",
                   color: "white",
                   cursor: "pointer",
-                  width: "100%"
+                  width: "100%",
                 }}
               >
                 Próximo jogador →
@@ -183,7 +242,15 @@ export default function GameScreen() {
       </div>
 
       <div style={{ marginTop: 18 }}>
-        <button onClick={() => navigate("/categorias")} style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #ddd", background: "#fff" }}>
+        <button
+          onClick={() => navigate("/categorias")}
+          style={{
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #ddd",
+            background: "#fff",
+          }}
+        >
           Voltar às categorias
         </button>
       </div>

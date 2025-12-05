@@ -103,7 +103,7 @@ export default function GamePass2() {
       setLoadingQuestions(true);
       setErrorLoadingQuestions(null);
       try {
-        const path = `/words/perguntas_${category}.csv`;
+        const path = `/words/perguntas_${category}.txt`;
         const arr = await loadTxtWords(path);
         const cleaned = arr.filter(Boolean).map((s) => String(s).trim());
         if (cleaned.length === 0) throw new Error("Arquivo de perguntas vazio");

@@ -1,0 +1,50 @@
+Mesa
+Cadeira
+Cama
+Sofá
+Lâmpada
+Livro
+Caneta
+Lápis
+Caderno
+Computador
+Teclado
+Mouse
+Celular
+Tablet
+Televisão
+Controle remoto
+Garrafa
+Copo
+Prato
+Colher
+Faca
+Garfo
+Relógio
+Mochila
+Carteira
+Chave
+Janela
+Porta
+Espelho
+Quadro
+Tapete
+Almofada
+Cobertor
+Travesseiro
+Vaso
+Planta artificial
+Caixa
+Saco de lixo
+Escova de dentes
+Pasta de dentes
+Shampoo
+Sabonete
+Toalha
+Ventilador
+Aspirador de pó
+Panela
+Frigideira
+Martelo
+Tesoura
+Fita adesiva

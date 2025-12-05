@@ -1,0 +1,50 @@
+Arroz
+Feijão
+Macarrão
+Pizza
+Hambúrguer
+Lasanha
+Sushi
+Ramen
+Tacos
+Burrito
+Churrasco
+Frango assado
+Peixe grelhado
+Omelete
+Salada Caesar
+Salada Grega
+Risoto
+Paella
+Strogonoff
+Feijoada
+Coxinha
+Pastel
+Pão de queijo
+Esfiha
+Quiche
+Empadão
+Nhoque
+Panqueca
+Crepe
+Torta de frango
+Torta de maçã
+Sorvete
+Pudim
+Brigadeiro
+Brownie
+Cookies
+Mousse de chocolate
+Gelatina
+Cuscuz
+Tabule
+Kibe
+Falafel
+Polenta
+Purê de batata
+Sopa de legumes
+Caldo verde
+Moqueca
+Escondidinho
+Vatapá
+Acarajé

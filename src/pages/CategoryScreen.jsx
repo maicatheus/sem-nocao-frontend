@@ -7,6 +7,7 @@ export default function CategoryScreen() {
     { id: "animais", label: "Animais" },
     { id: "objetos", label: "Objetos" },
     { id: "profissoes", label: "Profissões" },
+    { id: "jogadores", label: "Os Jogadores" },
   ];
 
   const navigate = useNavigate();
