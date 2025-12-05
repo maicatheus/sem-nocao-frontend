@@ -65,7 +65,11 @@ export default function GuessScreen() {
       setLoading(true);
       setLoadError(null);
       try {
-        const all = await loadTxtWords(`/words/${category}.txt`);
+        const all =
+          category === "jogadores"
+            ? players.map((p) => p.name)
+            : await loadTxtWords(`/words/${category}.txt`);
+            
         if (!mounted) return;
 
         let unique = Array.from(
