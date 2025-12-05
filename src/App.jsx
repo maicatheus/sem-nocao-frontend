@@ -7,6 +7,7 @@ import GamePass2 from "./pages/GamePass2";
 import DiscussionScreen from "./pages/DiscussionScreen";
 import VotingScreen from "./pages/VotingScreen";
 import RevealScreen from "./pages/RevealScreen";
+import GuessScreen from "./pages/GuessScreen";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/discussion" element={<DiscussionScreen />} />
         <Route path="/voting" element={<VotingScreen />} />
         <Route path="/reveal" element={<RevealScreen />} />
+        <Route path="/guess" element={<GuessScreen />} />
       </Routes>
     </BrowserRouter>
   );

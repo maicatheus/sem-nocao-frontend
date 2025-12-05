@@ -39,10 +39,10 @@ export default function GamePass2() {
   const startIndex = storedStart != null ? Number(storedStart) : null;
 
   const [turnIndex, setTurnIndex] = useState(0);
-  const [qaPairs, setQaPairs] = useState([]); 
-  const [mapping, setMapping] = useState(null); 
-  const [questionsPool, setQuestionsPool] = useState([]); 
-  const [questionsAll, setQuestionsAll] = useState([]); 
+  const [qaPairs, setQaPairs] = useState([]);
+  const [mapping, setMapping] = useState(null);
+  const [questionsPool, setQuestionsPool] = useState([]);
+  const [questionsAll, setQuestionsAll] = useState([]);
   const [loadingQuestions, setLoadingQuestions] = useState(false);
   const [errorLoadingQuestions, setErrorLoadingQuestions] = useState(null);
   const [generating, setGenerating] = useState(false);
@@ -72,7 +72,7 @@ export default function GamePass2() {
     }
     if (!players || players.length < 2) {
       alert(
-        "É necessário pelo menos 2 jogadores. Volte e adicione mais jogadores."
+        "É necessário pelo menos 3 jogadores. Volte e adicione mais jogadores."
       );
       navigate("/");
       return;
@@ -96,8 +96,7 @@ export default function GamePass2() {
           setMapping(parsed);
         }
       }
-    } catch {
-    }
+    } catch {}
 
     async function loadQuestions() {
       setLoadingQuestions(true);
@@ -144,8 +143,7 @@ export default function GamePass2() {
         pool = shuffle(questionsAll.slice());
       }
       const q = pool.pop();
-      setTimeout(() => {
-      }, 0);
+      setTimeout(() => {}, 0);
       return pool;
     });
 

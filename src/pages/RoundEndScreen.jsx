@@ -16,7 +16,7 @@ export default function RoundEndScreen() {
         maxWidth: 600,
         margin: "0 auto",
         fontFamily: "Arial, sans-serif",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
       <h1>Fim da rodada!</h1>
@@ -37,7 +37,7 @@ export default function RoundEndScreen() {
           color: "white",
           cursor: "pointer",
           width: "100%",
-          maxWidth: 400
+          maxWidth: 400,
         }}
       >
         Iniciar nova rodada
