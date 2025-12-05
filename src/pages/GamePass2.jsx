@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import usePlayers from "../hooks/usePlayers";
-import { loadCsvWords, shuffle } from "../utils/loadCsvWords";
+import { loadTxtWords, shuffle } from "../utils/loadTxtWords";
 
 function makeDerangementIndices(n) {
   if (n <= 1) return null;
@@ -104,7 +104,7 @@ export default function GamePass2() {
       setErrorLoadingQuestions(null);
       try {
         const path = `/words/perguntas_${category}.csv`;
-        const arr = await loadCsvWords(path);
+        const arr = await loadTxtWords(path);
         const cleaned = arr.filter(Boolean).map((s) => String(s).trim());
         if (cleaned.length === 0) throw new Error("Arquivo de perguntas vazio");
         setQuestionsAll(cleaned.slice());

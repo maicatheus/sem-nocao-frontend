@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import usePlayers from "../hooks/usePlayers";
-import { loadCsvWords, shuffle } from "../utils/loadCsvWords";
+import { loadTxtWords, shuffle } from "../utils/loadTxtWords";
 
 export default function GameScreen() {
   const navigate = useNavigate();
@@ -52,8 +52,8 @@ export default function GameScreen() {
       navigate("/categorias");
       return;
     }
-    if (!players || players.length < 2) {
-      alert("É necessário pelo menos 2 jogadores. Volte e adicione mais jogadores.");
+    if (!players || players.length < 3) {
+      alert("É necessário pelo menos 3 jogadores. Volte e adicione mais jogadores.");
       navigate("/");
       return;
     }
@@ -63,7 +63,7 @@ export default function GameScreen() {
       setLoading(true);
       setError(null);
       try {
-        const arr = await loadCsvWords(`/words/${category}.csv`);
+        const arr = await loadTxtWords(`/words/${category}.csv`);
         if (!mounted) return;
         const filtered = arr.filter(Boolean);
         if (filtered.length === 0) throw new Error("Categoria sem palavras.");
