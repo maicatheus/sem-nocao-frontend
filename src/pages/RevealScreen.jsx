@@ -64,7 +64,7 @@ export default function RevealScreen() {
         margin: "0 auto",
       }}
     >
-      <h1 style={{ marginBottom: 6 }}>Revelação — resultados da votação</h1>
+      <h1 style={{ marginBottom: 6 }}>Resultados da votação</h1>
       <p style={{ marginTop: 0, color: "#555" }}>
         Veja quantos votos cada jogador recebeu e descubra quem era o Sem Noção.
       </p>

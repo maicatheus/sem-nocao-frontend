@@ -93,9 +93,9 @@ export default function VotingScreen() {
         margin: "0 auto",
       }}
     >
-      <h1 style={{ marginBottom: 6 }}>Votação — Quem é o Sem Noção?</h1>
+      <h1 style={{ marginBottom: 6 }}>Quem é o Sem Noção?</h1>
       <p style={{ marginTop: 0, color: "#555" }}>
-        Agora cada jogador vota em quem acha que é o Sem Noção. Votante:{" "}
+        Cara jogador vota em quem acha que é o Sem Noção. Votante:{" "}
         <strong>{voter.name}</strong>.
       </p>
 

@@ -54,7 +54,7 @@ export default function CategoryScreen() {
 
       <h1 style={{ marginBottom: 6 }}>Escolha a categoria</h1>
       <p style={{ marginTop: 0, color: "#555" }}>
-        Selecione um tema para gerar as palavras do jogo.
+        Selecione um tema.
       </p>
 
       <div

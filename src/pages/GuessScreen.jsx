@@ -250,12 +250,12 @@ export default function GuessScreen() {
             >
               {isCorrect ? (
                 <div style={{ fontSize: 16 }}>
-                  🎉 <strong>Acertou!</strong> A palavra correta era{" "}
+                  <strong>Acertou!</strong> A palavra correta era{" "}
                   <strong>{roundWord}</strong>.
                 </div>
               ) : (
                 <div style={{ fontSize: 16 }}>
-                  😅 <strong>Não foi dessa vez.</strong> A palavra correta era{" "}
+                  <strong>Total sem noção.</strong> A palavra correta era{" "}
                   <strong>{roundWord}</strong>.
                 </div>
               )}

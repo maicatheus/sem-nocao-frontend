@@ -75,7 +75,7 @@ export default function NameScreen() {
     >
       <h1 style={{ marginBottom: 6 }}>Adicionar jogadores</h1>
       <p style={{ marginTop: 0, color: "#555" }}>
-        Adicione os nomes das pessoas que vão jogar (mínimo 2).
+        Adicione os nomes das pessoas que vão jogar (mínimo 3).
       </p>
 
       <div style={{ display: "flex", gap: 8, marginTop: 12 }}>

@@ -14,7 +14,7 @@ export default function RoundStartScreen() {
       <h1>Preparar próxima fase</h1>
 
       <p style={{ marginTop: 12, color: "#444", fontSize: 18 }}>
-        Não esqueca da palavra e tente adivinhar quem é o sem noção!
+        Lembre-se da palavra!
       </p>
 
       <div style={{ marginTop: 28 }}>

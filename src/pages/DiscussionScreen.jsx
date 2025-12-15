@@ -64,10 +64,9 @@ export default function DiscussionScreen() {
         margin: "0 auto",
       }}
     >
-      <h1 style={{ marginBottom: 6 }}>Discussão — perguntas e respostas</h1>
+      <h1 style={{ marginBottom: 6 }}>Discussão</h1>
       <p style={{ marginTop: 0, color: "#555" }}>
-        Aqui estão as perguntas que cada jogador recebeu — digite as respostas
-        (ou revise) e depois clique em "Finalizar".
+        Revide as Perguntas e Respostas
       </p>
 
       <div style={{ marginTop: 18, display: "grid", gap: 14 }}>

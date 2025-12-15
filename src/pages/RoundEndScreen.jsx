@@ -22,7 +22,7 @@ export default function RoundEndScreen() {
       <h1>Fim da rodada!</h1>
 
       <p style={{ marginTop: 10, fontSize: 18, color: "#444" }}>
-        Lembre-se da palavra e tente descobrir quem é o Sem Noção!
+        Lembre-se da palavra!
       </p>
 
       <button
